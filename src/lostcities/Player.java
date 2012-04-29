@@ -5,16 +5,14 @@
 package lostcities;
 
 import java.util.ArrayList;
-
 import javacards.*;
 
 /**
- *
+ * 
  * @author paddy
  */
 abstract class Player 
-{
-    
+{    
     /**
      * The player's hand.
      */
@@ -25,8 +23,15 @@ abstract class Player
      */
     private Deck[] expeditions = new Deck[5];
     
+    /**
+     * The player's name
+     */
     private String name;
     
+    /**
+     * Creates a new instance of player
+     * @param n The name of the player
+     */
     public Player(String n)
     {
         name = n;
@@ -57,6 +62,8 @@ abstract class Player
         }
     }
     
+    public abstract Deck getDeckToDrawFrom(GameState gamestate);
+    
     /**
      * Plays a card on to a specified deck
      * @param toPlay
@@ -82,7 +89,7 @@ abstract class Player
      * Chooses a card from the hand to play.
      * @return A pair, containing a card and a deck
      */
-    public abstract Pair<Card, Deck> chooseACardToPlay();
+    public abstract Pair<Card, Deck> chooseACardToPlay(GameState gameState);
     
     
     /**

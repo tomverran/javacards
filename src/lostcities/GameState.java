@@ -91,4 +91,9 @@ public class GameState {
     {
         return throwAways;
     }
+    
+    public Deck getDrawFromDeck()
+    {
+    	return drawFromPile;
+    }
 }

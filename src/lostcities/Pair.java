@@ -25,13 +25,13 @@ public class Pair<A, B>
     {
         if (other instanceof Pair) 
         {
-                Pair<A, B> otherPair = (Pair<A, B>) other;
+				Pair<A, B> otherPair = (Pair<A, B>) other;
                 return (first.equals(otherPair.getFirst()) && second.equals(otherPair.getSecond()));
         }
 
         return false;
     }
-
+    
     public String toString()
     { 
            return "(" + first + ", " + second + ")"; 
@@ -42,18 +42,8 @@ public class Pair<A, B>
         return first;
     }
 
-    public void setFirst(A first) 
-    {
-        this.first = first;
-    }
-
     public B getSecond() 
     {
         return second;
-    }
-
-    public void setSecond(B second) 
-    {
-        this.second = second;
     }
 }
