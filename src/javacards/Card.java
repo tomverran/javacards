@@ -10,9 +10,9 @@ package javacards;
  */
 public class Card
 {
-	/**
-	 * Value used for hearts
-	 */
+    /**
+     * Value used for hearts
+     */
     public static final int HEART = 1;
     /**
      * Value used for clubs
@@ -54,15 +54,16 @@ public class Card
     private Suit suit;
     
     /**
-     * Whether the card is on it's back or not. True if the card is face
+     * Whether the card is on its back or not. True if the card is face
      * down, false otherwise
      */
     boolean isFlipped = false;
     
     /**
      * Creates a randomly generated card
+     * @throws SuitNotAllowedException If the suit generated isn't between 1 and 8
      */
-    public Card()
+    public Card() throws SuitNotAllowedException
     {
         rank = (int)Math.random()*13+1;
         switch ((int)Math.random()*8+1)
@@ -88,7 +89,10 @@ public class Card
             case ROSE:
                 suit = Suit.ROSES;
                 break;
-            default: suit = Suit.TRIDENTS;
+            default:
+                // We should never hit this case, but if any future
+                // work introduces an error, we should fail consistently.
+                throw new SuitNotAllowedException(s);
         }       
     }
     
@@ -182,7 +186,7 @@ public class Card
     }
     
     /**
-     * Puts the card on it's back if it isn't already
+     * Changes which side of the card is up.
      */
     public void flipCard()
     {
