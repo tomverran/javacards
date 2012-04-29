@@ -66,7 +66,8 @@ public class Card
     public Card() throws SuitNotAllowedException
     {
         rank = (int)Math.random()*13+1;
-        switch ((int)Math.random()*8+1)
+        int suitRandom = (int)Math.random()*8+1;
+        switch (suitRandom)
         {
             case HEART:
                 suit = Suit.HEARTS;
@@ -89,10 +90,12 @@ public class Card
             case ROSE:
                 suit = Suit.ROSES;
                 break;
+            case TRIDENT:
+            	suit = Suit.TRIDENTS;
             default:
                 // We should never hit this case, but if any future
                 // work introduces an error, we should fail consistently.
-                throw new SuitNotAllowedException(s);
+                throw new SuitNotAllowedException(suitRandom);
         }       
     }
     
