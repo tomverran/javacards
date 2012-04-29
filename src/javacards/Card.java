@@ -10,9 +10,9 @@ package javacards;
  */
 public class Card
 {
-	/**
-	 * Value used for hearts
-	 */
+    /**
+     * Value used for hearts
+     */
     public static final int HEART = 1;
     /**
      * Value used for clubs
@@ -54,7 +54,7 @@ public class Card
     private Suit suit;
     
     /**
-     * Whether the card is on it's back or not. True if the card is face
+     * Whether the card is on its back or not. True if the card is face
      * down, false otherwise
      */
     boolean isFlipped = false;
@@ -182,7 +182,7 @@ public class Card
     }
     
     /**
-     * Puts the card on it's back if it isn't already
+     * Changes which side of the card is up.
      */
     public void flipCard()
     {
