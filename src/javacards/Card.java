@@ -61,8 +61,9 @@ public class Card
     
     /**
      * Creates a randomly generated card
+     * @throws SuitNotAllowedException If the suit generated isn't between 1 and 8
      */
-    public Card()
+    public Card() throws SuitNotAllowedException
     {
         rank = (int)Math.random()*13+1;
         switch ((int)Math.random()*8+1)
@@ -88,7 +89,10 @@ public class Card
             case ROSE:
                 suit = Suit.ROSES;
                 break;
-            default: suit = Suit.TRIDENTS;
+            default:
+                // We should never hit this case, but if any future
+                // work introduces an error, we should fail consistently.
+                throw new SuitNotAllowedException(s);
         }       
     }
     
