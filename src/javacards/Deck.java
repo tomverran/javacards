@@ -5,6 +5,7 @@
 package javacards;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 /**
  * A class which represents a deck of cards
@@ -34,7 +35,7 @@ public class Deck {
                     deck.add(new Card(i, j));
                 } catch (Exception ex) {
                     System.exit(0);
-                    //TODO: Sort out exception handling so it doesn't just crash - unsure how?
+                    //TODO: Sort out exception handling so it doesn't just crash
                 }
             }
         }
@@ -68,26 +69,13 @@ public class Deck {
      */
     public void sortDeck()
     {
-    	//TODO: Use comparable feature of Card.
-        ArrayList<Card> toReturn = new ArrayList<Card>();
-        toReturn.add(deck.get(0));
-        for (int i=1; i<deck.size(); i++)
-        {
-            Card putInPlace = deck.get(0);
-            int j=0;
-            while ((putInPlace.value() < toReturn.get(j).value()) && i<toReturn.size())
-            {
-                i++;
-            }
-            toReturn.add(i, putInPlace);
-        }
-        deck = toReturn;
+        Collections.sort(deck);
     }
     
     /**
      * Shuffles the cards
      */
-    public void shuffleDeck()
+    public void shuffleDeck ()
     {
         ArrayList<Card> toReturn = new ArrayList<Card>();
         while(!deck.isEmpty())
