@@ -78,8 +78,16 @@ public class GameState {
      * @return
      */
     private Player createPlayer(boolean human) {
-		// TODO Auto-generated method stub
-		return null;
+    	//TODO: Write a create player method
+    	if (human)
+    	{
+    		return null;    		
+    	}
+    	else
+    	{
+    		//TODO: Should there be some way of creating an intelligent player?
+    		return new RandomPlayer();
+    	}
 	}
 
 	private Player createPlayer() {

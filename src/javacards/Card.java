@@ -8,7 +8,7 @@ package javacards;
  *
  * @author paddy
  */
-public class Card
+public class Card implements Comparable<Card>
 {
     /**
      * Value used for hearts
@@ -263,5 +263,43 @@ public class Card
         }
         return (suit.toString() + ":" + rankString);
     }
+    
+	@Override
+	public int compareTo(Card toCompare) 
+	{
+	    final int BEFORE = -1;
+	    final int EQUAL = 0;
+	    final int AFTER = 1;
+	    if (toCompare == this)
+	    {
+	    	return EQUAL;
+	    }
+	    int compareSuit = Suit.toInt(toCompare.getSuit());
+	    int thisSuit = Suit.toInt(suit);
+    	if (compareSuit != thisSuit)
+	    {
+	    	if (compareSuit < thisSuit)
+	    	{
+	    		return BEFORE;
+	    	}
+	    	else
+	    	{
+	    		return AFTER;
+	    	}
+	    }
+	    int compareRank = toCompare.getRank();
+	    if (compareRank != rank)
+	    {
+	    	if (compareRank < rank)
+	    	{
+	    		return BEFORE;
+	    	}
+	    	else
+	    	{
+	    		return AFTER;
+	    	}
+	    }
+	    return 0;
+	}
     
 }
