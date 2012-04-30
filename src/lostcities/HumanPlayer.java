@@ -12,13 +12,13 @@ public class HumanPlayer extends Player
 
 	@Override
 	public Deck getDeckToDrawFrom(GameState gamestate) {
-		// TODO Auto-generated method stub
+		// TODO Get a user input and get the deck to draw from
 		return null;
 	}
 
 	@Override
 	public Pair<Card, Deck> chooseACardToPlay(GameState gameState) {
-		// TODO Auto-generated method stub
+		// TODO Get user input to get the card to play and which deck to play on.
 		return null;
 	}
 }

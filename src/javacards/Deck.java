@@ -34,7 +34,7 @@ public class Deck {
                     deck.add(new Card(i, j));
                 } catch (Exception ex) {
                     System.exit(0);
-                    //TODO: Sort out exception handling so it doesn't just crash
+                    //TODO: Sort out exception handling so it doesn't just crash - unsure how?
                 }
             }
         }
@@ -68,6 +68,7 @@ public class Deck {
      */
     public void sortDeck()
     {
+    	//TODO: Use comparable feature of Card.
         ArrayList<Card> toReturn = new ArrayList<Card>();
         toReturn.add(deck.get(0));
         for (int i=1; i<deck.size(); i++)
@@ -86,7 +87,7 @@ public class Deck {
     /**
      * Shuffles the cards
      */
-    public void shuffleDeck ()
+    public void shuffleDeck()
     {
         ArrayList<Card> toReturn = new ArrayList<Card>();
         while(!deck.isEmpty())
