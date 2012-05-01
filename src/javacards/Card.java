@@ -5,43 +5,11 @@
 package javacards;
 
 /**
- *
+ * 
  * @author paddy
  */
 public class Card implements Comparable<Card>
 {
-    /**
-     * Value used for hearts
-     */
-    public static final int HEART = 1;
-    /**
-     * Value used for clubs
-     */
-    public static final int CLUB = 2;
-    /**
-     * Value used for diamonds
-     */
-    public static final int DIAMOND = 3;
-    /**
-     * Value used for spades
-     */
-    public static final int SPADE = 4;
-    /**
-     * Value used for doves
-     */
-    public static final int DOVE = 5;
-    /**
-     * Value used for axes
-     */
-    public static final int AXE = 6;
-    /**
-     * Value used for roses
-     */
-    public static final int ROSE = 7;
-    /**
-     * Value used for tridents
-     */
-    public static final int TRIDENT = 8;
     
     /**
      * The rank of the card. Ace = 1, Jack = 11, Queen = 12, King = 13.
@@ -69,28 +37,28 @@ public class Card implements Comparable<Card>
         int suitRandom = (int)Math.random()*8+1;
         switch (suitRandom)
         {
-            case HEART:
+            case Suit.HEART:
                 suit = Suit.HEARTS;
                 break;
-            case CLUB:
+            case Suit.CLUB:
                 suit = Suit.CLUBS;
                 break;
-            case DIAMOND:
+            case Suit.DIAMOND:
                 suit = Suit.DIAMONDS;
                 break;
-            case SPADE:
+            case Suit.SPADE:
                 suit = Suit.SPADES;
                 break;
-            case DOVE: 
+            case Suit.DOVE: 
                 suit = Suit.DOVES;
                 break;
-            case AXE:
+            case Suit.AXE:
                 suit = Suit.AXES;
                 break;
-            case ROSE:
+            case Suit.ROSE:
                 suit = Suit.ROSES;
                 break;
-            case TRIDENT:
+            case Suit.TRIDENT:
             	suit = Suit.TRIDENTS;
             default:
                 // We should never hit this case, but if any future
@@ -126,28 +94,28 @@ public class Card implements Comparable<Card>
         rank = r;
         switch(s)
         {
-            case HEART:
+            case Suit.HEART:
                 suit = Suit.HEARTS;
                 break;
-            case CLUB:
+            case Suit.CLUB:
                 suit = Suit.CLUBS;
                 break;
-            case DIAMOND:
+            case Suit.DIAMOND:
                 suit = Suit.DIAMONDS;
                 break;
-            case SPADE:
+            case Suit.SPADE:
                 suit = Suit.SPADES;
                 break;
-            case DOVE: 
+            case Suit.DOVE: 
                 suit = Suit.DOVES;
                 break;
-            case AXE:
+            case Suit.AXE:
                 suit = Suit.AXES;
                 break;
-            case ROSE:
+            case Suit.ROSE:
                 suit = Suit.ROSES;
                 break;
-            case TRIDENT:
+            case Suit.TRIDENT:
                 suit = Suit.TRIDENTS; 
                 break;
             default:

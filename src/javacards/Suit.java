@@ -14,6 +14,40 @@ public enum Suit {
     DIAMONDS, HEARTS, CLUBS, SPADES, TRIDENTS, ROSES, DOVES, AXES;
     
     /**
+     * Value used for hearts
+     */
+    public static final int HEART = 1;
+    /**
+     * Value used for clubs
+     */
+    public static final int CLUB = 2;
+    /**
+     * Value used for diamonds
+     */
+    public static final int DIAMOND = 3;
+    /**
+     * Value used for spades
+     */
+    public static final int SPADE = 4;
+    /**
+     * Value used for doves
+     */
+    public static final int DOVE = 5;
+    /**
+     * Value used for axes
+     */
+    public static final int AXE = 6;
+    /**
+     * Value used for roses
+     */
+    public static final int ROSE = 7;
+    /**
+     * Value used for tridents
+     */
+    public static final int TRIDENT = 8;
+
+    
+    /**
      * 1 = Heart, 2 = Clubs, 3 = Diamonds, 4 = Spades, 5 = Doves, 6 = Axes, 7 = Roses, 8 = Tridents
      * @return
      */
@@ -22,21 +56,22 @@ public enum Suit {
     	switch(suit)
     	{
     		case HEARTS: 
-    			return 1;
+    			return HEART;
     		case CLUBS: 
-    			return 2;
+    			return CLUB;
     		case DIAMONDS:
-				return 3;
+				return DIAMOND;
     		case SPADES:
-    			return 4;
+    			return SPADE;
     		case DOVES:
-    			return 5;
+    			return DOVE;
     		case AXES:
-    			return 6;
+    			return AXE;
     		case ROSES:
-    			return 7;
+    			return ROSE;
     		default:
-    			return 8;
+    			return TRIDENT;
+    		//TODO: This should probably have a fail condition that throws
     	}
     }
     
