@@ -209,37 +209,6 @@ public class Card implements Comparable<Card>
         return (e.getRank() == rank && e.getSuit() == suit);
     }
     
-    public int value()
-    {
-        int valueOfSuit;
-        switch (suit)
-        {
-            case HEARTS: 
-                valueOfSuit = 1;
-                break;
-            case CLUBS:
-                valueOfSuit = 2;
-                break;
-            case DIAMONDS:
-                valueOfSuit = 3;
-                break;
-            case SPADES:
-                valueOfSuit = 4;
-                break;
-            case DOVES:
-                valueOfSuit = 5;
-                break;
-            case AXES:
-                valueOfSuit = 6;
-                break;
-            case ROSES:
-                valueOfSuit = 7;
-                break;
-            default: valueOfSuit = 8;
-        }
-        return rank + (valueOfSuit-1) * 12;
-    }
-    
     @Override 
     public String toString()
     {
