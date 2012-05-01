@@ -49,16 +49,11 @@ public class Deck {
      */
     public boolean isSorted()
     {
-        int lastValue=0;
-        for (int i=0; i<deck.size(); i++)
+        for (int i=0; i<(deck.size()-1); i++)
         {
-            if (deck.get(i).value()<lastValue)
+            if (deck.get(i).compareTo(deck.get(i+1)) == 1)
             {
                 return false;
-            }
-            else
-            {
-                lastValue = deck.get(i).value();
             }
         }
         return true;
@@ -77,14 +72,7 @@ public class Deck {
      */
     public void shuffleDeck ()
     {
-        ArrayList<Card> toReturn = new ArrayList<Card>();
-        while(!deck.isEmpty())
-        {
-            int randomNumber = (int)(Math.random()*deck.size());
-            toReturn.add(deck.get(randomNumber));
-            deck.remove(randomNumber);
-        }
-        deck = toReturn;
+    	Collections.shuffle(deck);
     }
     
     @Override
