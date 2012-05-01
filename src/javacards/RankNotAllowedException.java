@@ -1,12 +1,8 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package javacards;
 
 /**
- *
- * @author paddy
+ * An exception that's thrown if a rank isn't between 1 - 13.
+ * @author PatrickRose - pjr0911025@googlemail.com
  */
 class RankNotAllowedException extends Exception {
 

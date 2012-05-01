@@ -1,13 +1,9 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package javacards;
 
 /**
  * The various suits of the deck. This is the 8 suited version, containing
  * diamonds, hearts, clubs, spades, tridents, roses, doves and axes
- * @author paddy
+ * @author Patrick - pjr0911025@googlemail.com
  */
 public enum Suit {
     
@@ -48,8 +44,8 @@ public enum Suit {
 
     
     /**
-     * 1 = Heart, 2 = Clubs, 3 = Diamonds, 4 = Spades, 5 = Doves, 6 = Axes, 7 = Roses, 8 = Tridents
-     * @return
+     * Returns the suit as an int. 
+     * @return 1 if Heart, 2 if Clubs, 3 if Diamonds, 4 if Spades, 5 if Doves, 6 if Axes, 7 if Roses, 8 if Tridents
      */
     public static int toInt(Suit suit)
     {
@@ -71,7 +67,7 @@ public enum Suit {
     			return ROSE;
     		default:
     			return TRIDENT;
-    		//TODO: This should probably have a fail condition that throws
+    		//TODO: This should probably have a fail condition if we add more suits
     	}
     }
     

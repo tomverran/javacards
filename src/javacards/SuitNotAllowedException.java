@@ -1,12 +1,8 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package javacards;
 
 /**
- *
- * @author paddy
+ * An exception class that is usually thrown if the suit given doesn't exist
+ * @author PatrickRose - pjr0911025@googlemail.com
  */
 class SuitNotAllowedException extends Exception {
 

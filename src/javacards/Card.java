@@ -1,12 +1,8 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package javacards;
 
 /**
- * 
- * @author paddy
+ * A class representing a card.
+ * @author PatrickRose - pjr0911025@googlemail.com
  */
 public class Card implements Comparable<Card>
 {

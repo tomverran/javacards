@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package javacards;
 
 import java.util.ArrayList;
@@ -9,12 +5,18 @@ import java.util.Collections;
 
 /**
  * A class which represents a deck of cards
- * @author paddy
+ * @author PatrickRose - pjr0911025@googlemail.com
  */
 public class Deck {
     
+	/**
+	 * Represents the deck
+	 */
     private ArrayList<Card> deck;
     
+    /**
+     * Creates a 4 suited deck
+     */
     public Deck()
     {
         this(4);
@@ -283,6 +285,10 @@ public class Deck {
         }
     }
 
+    /**
+     * Tests if the deck is empty or not
+     * @return True if there are no cards in the deck, false otherwise
+     */
     public boolean isEmpty() {
         return deck.isEmpty();
     }
