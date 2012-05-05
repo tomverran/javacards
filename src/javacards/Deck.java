@@ -289,8 +289,8 @@ public class Deck {
      * Tests if the deck is empty or not
      * @return True if there are no cards in the deck, false otherwise
      */
-    public boolean isEmpty() {
+    public boolean isEmpty() 
+    {
         return deck.isEmpty();
     }
-    
 }
