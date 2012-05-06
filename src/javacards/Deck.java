@@ -1,5 +1,4 @@
 package javacards;
-
 import java.util.ArrayList;
 import java.util.Collections;
 
@@ -9,9 +8,9 @@ import java.util.Collections;
  */
 public class Deck {
     
-	/**
-	 * Represents the deck
-	 */
+    /**
+     * Represents the deck
+     */
     private ArrayList<Card> deck;
     
     /**
@@ -76,17 +75,17 @@ public class Deck {
     {
     	Collections.shuffle(deck);
     }
-    
+
     @Override
     public String toString()
     {
-        String toReturn = "";
-        for(int i=0; i<deck.size()-1; i++)
+        StringBuilder toReturn = new StringBuilder();
+        for(int i=0; i < deck.size()-1; i++)
         {
-            toReturn = toReturn + deck.get(i) + ", ";
+            toReturn.append(deck.get(i)).append(", ");
         }
-        toReturn = toReturn + deck.get(deck.size());
-        return toReturn;
+        toReturn.append(deck.get(deck.size()-1));
+        return toReturn.toString();
     }
     
     /**
@@ -209,18 +208,10 @@ public class Deck {
      * @return A certain number of cards from the deck
      * @throws IndexOutOfBoundsException If numberToGet isn't between 0 and the size of the deck
      */
-    public ArrayList<Card> getCards(int numberToGet) throws IndexOutOfBoundsException
+    public ArrayList<Card> getCards(int numberToGet)
     {
-    	if (numberToGet<0)
-    	{
-    		throw new IndexOutOfBoundsException();
-    	}
-    	ArrayList<Card> toReturn = new ArrayList<Card>();
-    	for(int i=0; i<numberToGet; i++)
-    	{
-    		toReturn.add(deck.get(i));
-    	}
-    	return toReturn;
+        if (numberToGet < 0) throw new IndexOutOfBoundsException();
+        return new ArrayList<Card>(deck.subList(0, numberToGet));
     }
     
     /**
@@ -231,18 +222,10 @@ public class Deck {
      * @return A number of cards from the deck
      * @throws IndexOutOfBoundsException If the numberToGet is less than 0
      */
-    public ArrayList<Card> getCards(int numberToGet, int startPosition) throws IndexOutOfBoundsException
+    public ArrayList<Card> getCards(int numberToGet, int startPosition)
     {
-    	if (numberToGet<0)
-    	{
-    		throw new IndexOutOfBoundsException();
-    	}
-    	ArrayList<Card> toReturn = new ArrayList<Card>();
-    	for(int i=0; i<numberToGet; i++)
-    	{
-    		toReturn.add(deck.get(i+(startPosition-1)));
-    	}
-    	return toReturn;
+        if (numberToGet < 0) throw new IndexOutOfBoundsException();   
+        return new ArrayList<Card>(deck.subList(startPosition-1, numberToGet));       
     }
     
     /**
@@ -251,18 +234,11 @@ public class Deck {
      * @return The cards at the bottom of the deck
      * @throws IndexOutOfBoundsException If amount is less than 0
      */
-    public ArrayList<Card> getBottomCards(int amount) throws IndexOutOfBoundsException
+    public ArrayList<Card> getBottomCards(int amount)
     {
-    	if (amount<0)
-    	{
-    		throw new IndexOutOfBoundsException();
-    	}
-    	ArrayList<Card> toReturn = new ArrayList<Card>();
-    	for (int i=1; i<=amount; i++)
-    	{
-    		toReturn.add(0, deck.get(deck.size()-i));
-    	}
-    	return toReturn;
+        if (amount < 0) throw new IndexOutOfBoundsException();
+        int size = deck.size();
+        return new ArrayList<Card>(deck.subList(size-amount, size-1)); 
     }
 
     /**
